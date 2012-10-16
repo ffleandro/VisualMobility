@@ -1,6 +1,6 @@
 #VisualMobility
 
-Visual Exploration Tool for Personal Analysis
+Visual Exploration of Personal Mobility Data
 
 ![Screenshot](https://raw.github.com/ffleandro/VisualMobility/master/examples/screenshot.png)
 
