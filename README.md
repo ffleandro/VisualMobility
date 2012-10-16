@@ -12,6 +12,17 @@ Check out the live demo here:
 ![Screenshot](https://raw.github.com/ffleandro/VisualMobility/master/examples/scatter_time.png)
 ![Screenshot](https://raw.github.com/ffleandro/VisualMobility/master/examples/scatter_date.png)
 
+##Dependencies
+ * [Backbone](http://backbonejs.org/)
+ * [Underscore](http://underscorejs.org/)
+ * [D3](http://d3js.org)
+ * [NVD3](http://nvd3.com/)
+ * [Leaflet](http://leaflet.cloudmade.com/)
+ * [Heatmap.js](https://github.com/pa7/heatmap.js)
+ * [CartoDB](http://cartodb.com/)
+ * [RaphaelJS](http://raphaeljs.com/)
+ * [JQuery](http://jquery.com/)
+
 ##Future Work
 
  * [Crossfilter](http://square.github.com/crossfilter/) integration
