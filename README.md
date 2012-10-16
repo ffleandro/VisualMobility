@@ -13,10 +13,35 @@ As part of my Masters' Thesis I developed this prototype. This was my first real
 Check out the live demo here:
 [http://visualmobility.tk](http://bit.ly/Wvoi38) (Chrome only)
 
-##Examples
-![Screenshot](https://raw.github.com/ffleandro/VisualMobility/master/examples/heatmap.png)
+
+##Visualizations
+###Map View
+Leaflet Map with SVG Overlays
+![Map](https://raw.github.com/ffleandro/VisualMobility/master/examples/map.png)
+
+Leaflet Map with Heatmap.js Canvas Overlay
+![Heatmap](https://raw.github.com/ffleandro/VisualMobility/master/examples/heatmap.png)
+
+###Scatter Plot
+NVD3 Scatter highlighting patterns along Hour of Day
 ![Screenshot](https://raw.github.com/ffleandro/VisualMobility/master/examples/scatter_time.png)
+
+NVD3 Scatter highlighting patterns along Time
 ![Screenshot](https://raw.github.com/ffleandro/VisualMobility/master/examples/scatter_date.png)
+
+###Chord Diagram
+D3 Chord Diagrama crossing Location Relationships
+![Screenshot](https://raw.github.com/ffleandro/VisualMobility/master/examples/chord_locations.png)
+
+##Scented Filters
+RaphaelJS Slider Controller
+![Screenshot](https://raw.github.com/ffleandro/VisualMobility/master/examples/scented_slider.png)
+
+RaphaelJS Toggle Controller
+![Screenshot](https://raw.github.com/ffleandro/VisualMobility/master/examples/scented_toggle.png)
+
+RaphaelJS Tag List with Autocomplete
+![Screenshot](https://raw.github.com/ffleandro/VisualMobility/master/examples/scented_taglist.png)
 
 ##Dependencies
  * [Backbone](http://backbonejs.org/)
