@@ -26,6 +26,7 @@ Check out the live demo here:
 ##Future Work
 
  * [Crossfilter](http://square.github.com/crossfilter/) integration
+ * [Torque](https://github.com/CartoDB/torque) integration
  * Remove [RaphaelJS](http://raphaeljs.com/) dependency on the Sidepanel. Change to [D3](http://d3js.org)+[Crossfilter](http://square.github.com/crossfilter/)
  * Better Data Collection tools
  * More visualizations
