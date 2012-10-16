@@ -1,0 +1,170 @@
+.filter {
+	position: relative;
+	width: 100%; 
+	height: 16%;
+	margin-top: -10px;
+	display: block;
+}
+
+.filter-title {
+	font-size: 8pt;
+	font-family:helvetica;
+	border: 1px solid black;
+	background: #AAA;
+	color: #FFF;
+	width: 150px;
+	height: 13px;
+	padding: 2px;
+	display: block;
+	margin-top: 5px;
+	margin-left: 5px;
+}
+
+#locationFilter {
+	padding-left: 5px;
+	padding-right: 5px;
+	height: 56px;
+}
+
+/*
+#locationFilter div#start {
+	background: magenta;
+}
+
+#locationFilter div#end {
+	background: orange;
+}
+*/
+
+#locationFilter div {
+	height: 29px;
+	overflow-y: auto;
+}
+
+#locationFilter div label {
+	margin-top: 7px;
+	margin-right: 5px; 
+	font-size: 10pt;
+	font-family:helvetica;
+	display: inline-block;
+	float: left;
+}
+
+#locationFilter div div {
+	height: 55px;
+	display: inline;
+	padding: 5px;
+}
+
+/*
+#locationFilter div ul li {
+	list-style: none;
+	margin: 0;
+	display: inline-block;
+	height: 30px;
+	background: yellow;
+}
+*/
+
+#locationFilter div div input {
+	margin-top: 4px;
+	margin-left: 2px;
+	width: 81px;
+	font-size: 10pt;
+	display: inline;
+	background: transparent;
+	font-family: Helvetica;
+	float: left;
+}
+
+/*
+#locationFilter div#start div input {
+	background: green;
+}
+
+#locationFilter div#end div input {
+	background: blue;
+}
+*/
+
+/*
+#locationFilter div div input:focus{
+    outline: none;
+}
+*/
+
+/*
+#locationFilter div div {
+	width: auto;
+	height: 37px;
+	background: yellow;
+	margin-top: 2px;
+	overflow-x: auto;
+	overflow-y: hidden;
+	white-space: nowrap;
+}
+*/
+
+#locationFilter div div span.tag {
+  float: left;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+  font-family:helvetica;
+  font-size:11px;
+  line-height: 10px;
+  padding-left: 3px;
+  padding-bottom: 3px;
+  padding-top: 0px;
+  margin-right:2px;
+  margin-top: 3px;
+  display: inline-block;
+}
+
+#locationFilter div div span.tag span {
+	padding-right: 0px;
+}
+
+#locationFilter div div span.tag button {
+  background: none;
+  cursor: pointer;
+  border: 0;
+  width: 15px;
+  height: 15px;
+  padding: 0px;
+  margin-top: 2px;
+  font-weight:700;
+  text-decoration:none;
+  font-size:11px;
+  line-height: 10px;
+}
+
+#locationFilter div#start div span.tag.enabled button {
+	color:#6d8733;
+}
+
+#locationFilter div#start div span.tag.enabled {
+  border-color: #6d8733;
+  background:#11D432;
+  color:#6d8733;
+}
+
+#locationFilter div#end div span.tag.enabled button {
+	color:#da1d2d;
+}
+
+#locationFilter div#end div span.tag.enabled {
+  border-color: #da1d2d;
+  background:#FBD8DB;
+  color:#da1d2d;
+}
+
+#locationFilter div div span.tag.disabled button {
+	color:#525252;
+}
+
+#locationFilter div div span.tag.disabled {
+  border-color: #525252;
+  background:#a5a5a5;
+  color:#525252;
+}

@@ -1,0 +1,379 @@
+@font-face {
+	font-family: ChristopherHand;
+	src: url('../font/comesinhandy.ttf');
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+#header {
+	width:100%;
+    height:76px;
+    background-image: url(../img/header_pattern.png);
+    background-repeat: repeat-x;
+}
+
+button#logo {
+	background: none;
+	position: absolute;
+	top: 0px;
+	left: 10px;
+	border: 0;
+	font-size: 50px;
+	font-family: ChristopherHand;
+	color: white;
+}
+
+button#share{
+	position: absolute;
+	right: 20px;
+	top: 22px;
+	cursor: pointer;
+	border: 0;
+	width: 162px;
+	height: 29px;
+	background: url(../img/btn_share.png) no-repeat;
+	background-position: top;
+}
+
+button#share:active{
+	background-position: center;
+}
+
+button#about{
+	position: absolute;
+	right: 200px;
+	top: 23px;
+	cursor: pointer;
+	border: 0;
+	color:white;
+	font-size: 16px;
+	background: none;
+}
+
+button#about:hover{
+	text-decoration: underline;
+}
+
+#canvas {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	top: 76px;
+	bottom: 0;
+	right: 0;
+	background: #777;
+}
+
+#canvas .row{
+    display: block;
+}
+
+#canvas .row .cell{
+    float: left;
+    border: 2px solid black;
+    margin: 2px;
+}
+
+#sidepanel {
+    position:absolute;
+    bottom:0;
+    right: -399px;
+    width:399px;
+    top: 60px;
+    height:auto;
+    
+    /*
+-webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
+*/
+}
+
+#sidepanel.open {
+	/* right: 0px; */
+}
+
+#sidepanel.close {
+/* 	right: -399px; */
+}
+
+#sidepanel #sidepanel_btn {
+	position: absolute;
+	background: white;
+	border: solid #686868;
+	border-width: 1px 0px 1px 1px;
+	border-radius: 78px 0px 0px 78px;
+	right:398px;
+	top: 45%;
+	width: 30px;
+	height: 50px;
+	cursor: pointer;
+	z-index: 8;
+}
+
+#sidepanel #sidepanel_btn #arrow {
+	position: absolute;
+	top:17px;
+	left: 10px;
+	width: 10px;
+	height: 10px;
+	
+	background: transparent;
+	border: solid black;
+	border-width: 2px 0px 0px 2px;
+
+	-webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
+}
+
+#sidepanel #sidepanel_btn #arrow:after {
+	content: ' ';
+	position: absolute;
+	top:2px;
+	left: 2px;
+	width: 8px;
+	height: 8px;
+	
+	background: transparent;
+	border: solid black;
+	border-width: 1px 0px 0px 1px;
+}
+
+#sidepanel.open #sidepanel_btn #arrow{
+    -webkit-transform: rotate(-225deg);
+    -moz-transform: rotate(-225deg);
+    -o-transform: rotate(-225deg);
+    -ms-transform: rotate(-225deg);
+}
+
+#sidepanel.close #sidepanel_btn #arrow{
+	-webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+}
+
+#sidepanel_tabs {
+    padding: 0px;
+    margin: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+    list-style: none;
+    display: inline;
+    vertical-align: bottom;
+	font-size:0;
+}
+ 
+ul#sidepanel_tabs li {
+    display: inline-block;
+}
+
+div#sidepanel_content {
+	position: absolute;
+	background: white;
+	display: inline-block;
+	border: solid #686868;
+	border-width: 0px 0px 0px 1px;
+    width: 100%;
+    height: auto;
+    top: 41px;
+    bottom: 0;
+}
+
+button.tab{
+	text-decoration: none;
+    background-position: top;
+    float:left;
+    color: #FFF;
+    cursor: pointer;
+    font: 900 14px/22px "Arial", Helvetica, sans-serif;
+    width: 133px;
+    height: 35px;
+    background: gray;
+    cursor: pointer;
+    
+    border-radius: 5px 5px 0px 0px;
+    border: solid #686868;
+    border-width: 1px 1px 1px 1px;    
+}
+
+div.tabContent {
+	width: auto;
+	height: auto;
+	background: white;
+	padding: 1px;
+	position: absolute;
+	bottom: 0;
+	top: 0;
+	left: 0;
+	right: 0;
+	visibility: hidden;
+}
+
+button.selected {
+    background: white;
+    height: 41px;
+    color: #000;
+    border-width: 1px 1px 0px 1px;
+}
+
+div.selected {
+	visibility: visible;
+}
+
+.listview-container {
+	position: relative;
+	height: 50%;
+	width: 100%;
+	padding: 20px 20px 0px 20px;
+	margin: 0;
+}
+
+.listview {
+	position: relative;
+	margin: 0;
+	padding: 0px;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border: 1px solid black;
+}
+
+.listview li .listcell {
+	width: 100%;
+	height: 30px;
+	border: 1px solid #CCC;
+	border-radius: 5px;
+	background-color: #EEE;
+	background-image: -webkit-gradient(linear, left top, left bottom, from( white /*{c-bup-background-start}*/), to( #F1F1F1 /*{c-bup-background-end}*/));
+	overflow-x: never;
+	overflow-y: never;
+	display: inline;
+	white-space: nowrap;
+	text-align: left;
+	padding-left: 15px;
+	font-size: 14px;
+	font-weight: bold;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+.listview li .listcell.selected {
+	background-image: -webkit-linear-gradient( #6FACD5 /*{b-bar-background-start}*/, #497BAE /*{b-bar-background-end}*/);
+	color: #FFF;
+}
+
+.listview li {
+	list-style: none;
+}
+
+.listview.hidden {
+	display: none;
+}
+
+.listview .listcell.selected {
+	background-image: -webkit-gradient(linear, left top, left bottom, from( #c6eeff ), to( #5eb7ff ));
+}
+
+#saveContent label {
+	font-size: 14px;
+	font-weight: bold;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+#settingsView {
+	position: absolute;
+	width: 300px;
+	height: 175px;
+	left: 50%;
+	top: 50%;
+	margin-left: -150px;
+	margin-top: -92px;
+	background: #CCC;
+	border: 2px solid black;
+	border-radius: 10px;
+	z-index: 20;
+}
+
+#settingsView div {
+	margin-left: 15px;
+	margin-top: 10px;
+}
+
+#settingsView.disabled, #settingsView div.disabled {
+	display: none;
+}
+
+#settingsView.enabled, #settingsView div.enabled {
+	display: block;
+}
+
+#settingsView button#close {
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	background: white;
+	border: 2px solid black;
+	border-radius: 15px;
+	font-size: 14px;
+	font-weight: bold;
+	font-family: Helvetica, Arial, sans-serif;
+	margin-left: -15px;
+	margin-top: -15px;
+	padding: 1px;
+	text-align: center;
+	line-height: 10px;
+}
+
+#settingsView button#close:active {
+	 border: 5px solid black; 
+}
+
+#settingsView div label {
+	font-size: 14px;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+#settingsView button#save {
+	position: absolute;
+	bottom: 10px;
+	right: 12px;
+	width: 75px;
+	height: 20px;
+	background: -webkit-linear-gradient(#83de69 0%, #38c14d 100%);
+	border: 1px solid black;
+	border-radius: 5px;
+	font-size: 12px;
+	font-family: Helvetica, Arial, sans-serif;
+	text-align: center;
+}
+
+#settingsView button#save:active {
+	background: -webkit-linear-gradient(#50a139 0%, #028616 100%);
+}
+
+#settingsView div#plot table{
+	width: 330px;		
+}
+
+#settingsView div#plot select {
+	width: 150px;
+}
+
+.leaflet-control-attribution {
+	position: absolute;
+}
+
+#locationFilter div div input.ui-autocomplete-input {
+	width:150px;
+}

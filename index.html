@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	
+	<title>Visual Mobility</title>
+	
+	<!-- import stylesheets -->
+	<link href="assets/lib/Leaflet/dist/leaflet.css" media="screen" rel="stylesheet" type="text/css" />
+	<!--[if lte IE 8]>
+	 <link href="assets/lib/Leaflet/dist/leaflet.ie.css" media="screen" rel="stylesheet" type="text/css" />
+	<![endif]-->
+	<link href="assets/css/styles.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="assets/css/configure_tab_styles.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="assets/css/analyze_tab_styles.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/flick/jquery-ui.css" rel="stylesheet" type="text/css" >
+    <link href="assets/lib/nvd3/src/nv.d3.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="assets/css/chord.css" media="screen" rel="stylesheet" type="text/css" />
+    
+    <!-- import libs -->  
+    <script src="assets/lib/Leaflet/dist/leaflet.js" type="text/javascript"></script>
+    <script src="assets/lib/jquery.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js" type="text/javascript"></script>
+	<script src="assets/lib/json2.js" type="text/javascript"></script>
+	<script src="assets/lib/underscore.js" type="text/javascript"></script>
+	<script src="assets/lib/backbone.js" type="text/javascript"></script>
+	<script src="assets/lib/backbone-localstorage.js" type="text/javascript"></script>
+	<script src="assets/lib/heatmap.js" type="text/javascript"></script>
+	<script src="assets/lib/heatmap-leaflet.js" type="text/javascript"></script>
+	
+	<script src="assets/lib/raphael.js" type="text/javascript" ></script>
+	
+	<script src="assets/lib/d3.v2.min.js" type="text/javascript"></script>
+	<script src="assets/lib/nvd3/lib/fisheye.js" type="text/javascript"></script>
+	<script src="assets/lib/nvd3/nv.d3.min.js" type="text/javascript"></script>
+	<script src="assets/lib/nvd3/src/tooltip.js"></script>
+	<script src="assets/lib/nvd3/src/models/legend.js"></script>
+	<script src="assets/lib/nvd3/src/models/axis.js"></script>
+	<script src="assets/lib/nvd3/src/models/distribution.js"></script>
+	<script src="assets/lib/nvd3/src/models/scatter.js"></script>
+	<script src="assets/lib/nvd3/src/models/scatterChart.js"></script>
+	
+	<script src="src/colors.js" type="text/javascript"></script>
+	<script src="src/utils.js" type="text/javascript"></script>
+	
+	<!-- import app src -->
+	<script src="src/view/Canvas.js" type="text/javascript"></script>
+	<script src="src/view/MapCanvas.js" type="text/javascript"></script>
+	<script src="src/view/PlotCanvas.js" type="text/javascript"></script>
+	<script src="src/view/ChordCanvas.js" type="text/javascript"></script>
+	<script src="src/model/Filter.js" type="text/javascript"></script>
+	<script src="src/model/Configuration.js" type="text/javascript"></script>
+	
+	<script src="src/view/filters/controllers/BarsWithSlidersController.js" type="text/javascript"></script>
+	<script src="src/view/filters/controllers/BarsWithToggleController.js" type="text/javascript"></script>
+	
+	<script src="src/view/filters/FilterController.js" type="text/javascript"></script>
+	<script src="src/view/filters/DateController.js" type="text/javascript"></script>
+	<script src="src/view/filters/TimeController.js" type="text/javascript"></script>
+	<script src="src/view/filters/DistanceController.js" type="text/javascript"></script>
+	<script src="src/view/filters/DurationController.js" type="text/javascript"></script>
+	<script src="src/view/filters/DateController.js" type="text/javascript"></script>
+	<script src="src/view/filters/LocationController.js" type="text/javascript"></script>
+	<script src="src/view/filters/TransportController.js" type="text/javascript"></script>
+	<script src="src/view/filters/CarbonController.js" type="text/javascript"></script>
+	
+	<script src="src/visualmobility.js" type="text/javascript"></script>
+	<!-- end of imports -->
+</head>
+<body>
+		
+	<div id="visualmobility">    
+		<header id="header">
+			<button id="logo">Visual Mobility</button>
+			<button id="about">About</button>
+			<button id="share"></button>
+		</header>
+		<div id="canvas">
+			<div id="row1" class="row">
+				<div id="col1" class="cell">
+					
+				</div>
+				<div id="col2" class="cell"></div>
+			</div>
+			<div id="row2" class="row">
+				<div id="col1" class="cell">
+					<div class="settings-control"></div>
+				</div>
+				<div id="col2" class="cell"></div>
+			</div>
+		</div>
+		<div id="sidepanel" class="close">
+			<ul id="sidepanel_tabs">
+				<li><button id="filterTab" 		class="tab">Filter</button></li>
+			    <li><button id="configureTab" 	class="tab">Configure</button></li>
+			    <li><button id="saveTab" 		class="tab">Save</button></li>
+			</ul>
+			<div id="sidepanel_content">
+				<div id="filterContent" class="tabContent">
+					<p class="filter-title">Location</p>
+					<div id="locationFilter" class="filter">
+						<div id="start">
+							<label>Starting In:</label>
+							<div><input></input></div>
+						</div>
+						<div id="end">
+							<label>Ending In:&nbsp;</label>
+							<div><input></input></div>
+						</div>
+					</div>
+					<p class="filter-title">Day</p>
+					<div id="dateFilter" class="filter"></div>
+					
+					<p class="filter-title">Hour of the Day</p>
+					<div id="timeFilter" class="filter"></div>
+					
+					<p class="filter-title">Track Distance</p>
+					<div id="distanceFilter" class="filter"></div>
+					
+					<p class="filter-title">Track Duration</p>
+					<div id="durationFilter" class="filter"></div>
+					
+					<p class="filter-title">CO2 Emissions</p>
+					<div id="carbonFilter" class="filter"></div>
+					
+					<p class="filter-title">Transport Mode</p>
+					<div id="transportFilter" class="filter"></div>
+				</div>
+				<div id="configureContent" 	class="tabContent">
+					<div id="layoutPicker">
+						<div class="cell" id="0"></div>
+						<div class="cell" id="1"></div>
+						<div class="cell" id="2"></div>
+						<div class="cell" id="3"></div>
+					</div>
+					
+					<p id="viscontainer_label">Available Visualizations</p>
+					<div id="viscontainer">
+					</div>
+				</div>
+				<div id="saveContent" class="tabContent">
+					<div id="filter" class="listview-container">
+						<label>Filters</label>
+						<ul id="filter" class="listview">
+							
+						</ul>
+						<button id="delete">Delete</button><button id="save">Save</button><input id="new"></input>
+					</div>
+				
+					<div id="configuration" class="listview-container">
+						<label>Configurations</label>
+						<ul id="configuration" class="listview">
+							
+						</ul>
+							<button id="delete">Delete</button><button id="save">Save</button><input id="new"></input>
+					</div>
+				</div>
+			</div>
+			<button id="sidepanel_btn">
+				<div id="arrow"></div>
+			</button>
+		</div>
+		
+		<div id="settingsView" class="disabled">
+			<button id="close">X</button>
+			
+			<div id="plot">
+				<table>			
+				<!--
+				<tr>
+					<td><label>Plot Type: </label></td>
+					<td><select id="type">
+						</select>
+					</td>
+				</tr>	
+				-->	
+				<tr>
+					<td><label>X Axis: </label></td>
+					<td><select id="x">
+					    </select>
+					</td>
+				</tr>	    
+				<tr>
+					<td><label>Y Axis: </label></td>
+					<td><select id="y">
+						</select></br>
+					</td>
+				</tr>		
+				<tr>
+					<td><label>Bubble Size: </label></td>
+					<td><select id="size">
+					    </select>
+					</td>
+				</tr>
+				<tr>
+					<td><label>Bubble Color: </label></td>
+					<td><select id="color">
+					    </select>
+					</td>
+				</tr>
+				</table>
+			</div>
+			
+			<div id="map">
+				<table>    
+				<tr>
+					<td><label>Cluster Tracks: </label></td>
+					<td><input type="checkbox" id="cluster">
+						</input>
+					</td>
+				</tr>
+				</table>
+			</div>
+			
+			<button id="save">Save</button>
+		</div>
+	</div>
+	
+	<!-- Templates -->
+	<script type="text/template" id="listcell-template">
+    	<li><button id='<%= id %>' class="listcell"><%= label %></button></li>
+    </script>
+
+</body>
+</html>
