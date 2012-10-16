@@ -2,7 +2,7 @@
 
 Visual Exploration Tool for Personal Analysis
 
-![Screenshot](VisualMobility/README/screenshot.png)
+![Screenshot](https://raw.github.com/ffleandro/VisualMobility/master/README/screenshot.png)
 
 Check out the live demo here:
 [http://visualmobility.tk](http://visualmobility.tk) (Chrome only)
