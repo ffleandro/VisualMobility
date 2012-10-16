@@ -35,12 +35,15 @@ D3 Chord Diagrama crossing Location Relationships
 
 ##Scented Filters
 RaphaelJS Slider Controller
+
 ![Screenshot](https://raw.github.com/ffleandro/VisualMobility/master/examples/scented_slider.png)
 
 RaphaelJS Toggle Controller
+
 ![Screenshot](https://raw.github.com/ffleandro/VisualMobility/master/examples/scented_toggle.png)
 
 RaphaelJS Tag List with Autocomplete
+
 ![Screenshot](https://raw.github.com/ffleandro/VisualMobility/master/examples/scented_taglist.png)
 
 ##Dependencies
