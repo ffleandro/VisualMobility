@@ -84,20 +84,9 @@ var LocationController = FilterController.extend({
 				});
 			}
 		});
-				
-		/*
-$('#locationFilter div span.tag').remove();
-		_.each(this.filter.get('startLocations'), function(l){
-			this.addStartTag(l);
-    	}, this);
-		
-		$('#locationFilter div span.tag').remove();
-		_.each(this.filter.get('endLocations'), function(l){
-			this.addEndTag(l);
-    	}, this);
-*/
     	
     	this.locations = locations;
+    	this.colorScale = colorScale;
 	},
 	
 	startInputKeyUp: function(e) {
@@ -110,24 +99,41 @@ $('#locationFilter div span.tag').remove();
 	
 	endInputKeyUp: function(e){
 		var location = this.endInput.val();
-	    if (e.keyCode == 13 && location.length > 0 && this.locations.contains(location)) {
+	    if (e.keyCode == 13 && location.length > 0 && this.locations.map(function(l){ return l.name }).contains(location)) {
 	    	this.filter.addEndLocation(location);
 	    	this.addEndTag(location);
 	    }
 	},
 	
 	addStartTag: function(location){
-		if(this.locations.map(function(l){ return l.name }).contains(location)){
-	    	this.startInput.before("<span id='" + location + "' class='tag enabled'><span>" + location + "</span><button>x</button></span>");
+		var l = null;
+		for(var i = 0; i < this.locations.length; i++){
+			l = this.locations[i];
+			if(location == l.name){
+				break;
+			}
+		}
+		
+		if(l != null){
+	    	this.startInput.before($("<span id='" + l.name + "' class='tag enabled'><span>" + l.name + "</span><button>x</button></span>").css("background", this.colorScale(l.cnt)));
 	    } else {
-		    this.startInput.before("<span id='" + location + "' class='tag disabled'><span>" + location + "</span><button>x</button></span>");
+		    this.startInput.before("<span id='" + l.name + "' class='tag disabled'><span>" + l.name + "</span><button>x</button></span>");
 	    }
 	    this.startInput.val('');
 	},
 	
 	addEndTag: function(location) {
+		var l = null;
+		for(var i = 0; i < this.locations.length; i++){
+			l = this.locations[i];
+			if(location == l.name){
+				break;
+			}
+		}
+
+	
     	if(this.locations.map(function(l){ return l.name }).contains(location)){
-	    	this.endInput.before("<span id='" + location + "' class='tag enabled'><span>" + location + "</span><button>x</button></span>");
+	    	this.endInput.before($("<span id='" + location + "' class='tag enabled'><span>" + location + "</span><button>x</button></span>").css("background", this.colorScale(l.cnt)));
 	    } else {
 		    this.endInput.before("<span id='" + location + "' class='tag disabled'><span>" + location + "</span><button>x</button></span>");
 	    }

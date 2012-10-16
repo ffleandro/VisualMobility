@@ -140,23 +140,21 @@
 }
 
 #locationFilter div#start div span.tag.enabled button {
-	color:#6d8733;
+	color:black;
 }
 
 #locationFilter div#start div span.tag.enabled {
-  border-color: #6d8733;
-  background:#11D432;
-  color:#6d8733;
+  border-color: black;
+  color:black;
 }
 
 #locationFilter div#end div span.tag.enabled button {
-	color:#da1d2d;
+	color:black;
 }
 
 #locationFilter div#end div span.tag.enabled {
-  border-color: #da1d2d;
-  background:#FBD8DB;
-  color:#da1d2d;
+  border-color: black;
+  color:black;
 }
 
 #locationFilter div div span.tag.disabled button {
