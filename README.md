@@ -2,10 +2,15 @@
 
 Visual Exploration Tool for Personal Analysis
 
-![Screenshot](https://raw.github.com/ffleandro/VisualMobility/master/README/screenshot.png)
+![Screenshot](https://raw.github.com/ffleandro/VisualMobility/master/examples/screenshot.png)
 
 Check out the live demo here:
 [http://visualmobility.tk](http://visualmobility.tk) (Chrome only)
+
+##Examples
+![Screenshot](https://raw.github.com/ffleandro/VisualMobility/master/examples/heatmap.png)
+![Screenshot](https://raw.github.com/ffleandro/VisualMobility/master/examples/scatter_time.png)
+![Screenshot](https://raw.github.com/ffleandro/VisualMobility/master/examples/scatter_date.png)
 
 ##Future Work
 
