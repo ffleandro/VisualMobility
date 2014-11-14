@@ -10,9 +10,6 @@ _VisualMobility is a **visual exploration** tool for **multi-modal personal mobi
 
 As part of my Masters' Thesis I developed this prototype. This was my first real experience with HTML5, CSS and JavaScript so of course there are lots of code optimizations to be done. This project was just the tip of the iceberg for personal mobility exploration tools and I hope to add future developments for more flexibility and integration with other tools and data sources.
 
-Check out the live demo here:
-[http://visualmobility.tk](http://bit.ly/Wvoi38) (Chrome only)
-
 
 ##Visualizations
 ###Map View
